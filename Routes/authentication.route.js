@@ -24,24 +24,7 @@ const {
 
 
 // Helpers
-const isValidToken = async (username,token) =>
-{
-    await Patient.findOne({username})
-    .then( async (prof) =>
-    {
-        console.log("invalidation method ",prof.loginToken," sdfd" , token," result ", token == prof.loginToken)
-        if(prof.loginToken == "")
-        {
-            console.log("undefined token")
-            return false;
-        }
-        
-        return await token == prof.loginToken;
-        
-            
-    }
-    )
-}
+
 
 const filterOut = (info) => {
     let fieldsReq = ["fullName","username","password","emailId","contactNo","dob","state","city","gender","demographicInfo"];
